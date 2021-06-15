@@ -1,0 +1,9 @@
+#!/bin/bash
+
+printf 'sourced: %s\n' "${POPULATED}"
+printf 'sourced: %s\n' "${EXPORTED}"
+printf 'sourced: %s\n' "${EVAL_EXPORTED}"
+printf 'sourced: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'sourced: %s\n' "${EXPORTED_FROM_FUNCTION}"
+echo sourced bash source: ${BASH_SOURCE[0]}
+echo sourced 0: $0

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+printf 'child: %s\n' "${POPULATED}"
+printf 'child: %s\n' "${EXPORTED}"
+printf 'child: %s\n' "${EVAL_EXPORTED}"
+printf 'child: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'child: %s\n' "${EXPORTED_FROM_FUNCTION}"
+echo child bash source: ${BASH_SOURCE[0]}
+echo child 0: $0

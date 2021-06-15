@@ -1,0 +1,12 @@
+#!/bin/bash
+
+printf 'peer2: %s\n' "${POPULATED}"
+printf 'peer2: %s\n' "${EXPORTED}"
+printf 'peer2: %s\n' "${EVAL_EXPORTED}"
+printf 'peer2: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'peer2: %s\n' "${EXPORTED_FROM_FUNCTION}"
+
+. "$(dirname $(readlink -f "${0}"))/sourced"
+"$(dirname $(readlink -f "${0}"))/child"
+echo peer2 bash source: ${BASH_SOURCE[0]}
+echo peer2 0: $0
