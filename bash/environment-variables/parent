@@ -1,0 +1,23 @@
+#!/bin/bash
+
+"$(dirname $(readlink -f "${0}"))/peer1"
+"$(dirname $(readlink -f "${0}"))/peer2"
+
+printf 'parent: %s\n' "${POPULATED}"
+printf 'parent: %s\n' "${EXPORTED}"
+printf 'parent: %s\n' "${EVAL_EXPORTED}"
+printf 'parent: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'parent: %s\n' "${EXPORTED_FROM_FUNCTION}"
+
+printf ' ---- SOURCING ---- \n'
+
+. "$(dirname $(readlink -f "${0}"))/peer1"
+. "$(dirname $(readlink -f "${0}"))/peer2"
+
+printf 'parent: %s\n' "${POPULATED}"
+printf 'parent: %s\n' "${EXPORTED}"
+printf 'parent: %s\n' "${EVAL_EXPORTED}"
+printf 'parent: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'parent: %s\n' "${EXPORTED_FROM_FUNCTION}"
+echo parent bash source: ${BASH_SOURCE[0]}
+echo parent 0: $0

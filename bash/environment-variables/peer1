@@ -1,0 +1,21 @@
+#!/bin/bash
+
+POPULATED='populated'
+export EXPORTED='exported'
+eval export EVAL_EXPORTED='eval_exported'
+function f() {
+  POPULATED_FROM_FUNCTION='populated_from_function'
+  export EXPORTED_FROM_FUNCTION='exported_from_function'
+}
+f
+
+printf 'peer1: %s\n' "${POPULATED}"
+printf 'peer1: %s\n' "${EXPORTED}"
+printf 'peer1: %s\n' "${EVAL_EXPORTED}"
+printf 'peer1: %s\n' "${POPULATED_FROM_FUNCTION}"
+printf 'peer1: %s\n' "${EXPORTED_FROM_FUNCTION}"
+
+. "$(dirname $(readlink -f "${0}"))/sourced"
+"$(dirname $(readlink -f "${0}"))/child"
+echo peer1 bash source: ${BASH_SOURCE[0]}
+echo peer1 0: $0

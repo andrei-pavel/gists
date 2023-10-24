@@ -1,0 +1,5 @@
+#!/bin/sh
+# -*- sh -*-
+# @configure_input@
+echo "test: @abs_top_builddir@"
+echo "test+ac: @ac_abs_top_builddir@"
